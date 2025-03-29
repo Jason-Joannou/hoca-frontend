@@ -15,11 +15,11 @@ export default function Home() {
         {/* Left-aligned content */}
         <div className="text-2xl md:text-3xl text-gray-700 text-left">
           <p className="mb-4">
-            <span className="italic">noun</span>
+            <span className="italic">Abstract</span>
           </p>
-          <p className="mb-8">A term representing [insert definition here].</p>
+          <p className="mb-8">A belonging to a greater collective.</p>
           <p className="text-2xl text-gray-500 italic">
-            "Example usage of HOCA in a sentence."
+            "HOCA is what we do together, again and again."
           </p>
         </div>
       </div>
