@@ -114,7 +114,9 @@ export default function Home() {
           <p className="mb-4 h-10">
             <span className="italic">
               {thinkingComplete ? "Abstract" : thinkingText}
-              {!allComplete && <span className="animate-pulse">|</span>}
+              {thinkingText && !definitionText && !allComplete && (
+                <span className="animate-pulse">|</span>
+              )}
             </span>
           </p>
           <p className="mb-8 min-h-[2em]">
