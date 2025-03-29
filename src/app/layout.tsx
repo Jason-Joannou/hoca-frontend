@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Roboto_Mono } from "next/font/google";
+import { Roboto_Mono, Ubuntu } from "next/font/google";
 import "./globals.css";
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-roboto-mono",
+});
+
+const ubuntuFont = Ubuntu({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-ubuntu",
 });
 
 export const metadata: Metadata = {
@@ -20,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${robotoMono.className} bg-gray-100`}>{children}</body>
+      <body className={`${ubuntuFont.className} bg-gray-100`}>{children}</body>
     </html>
   );
 }
