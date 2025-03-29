@@ -115,11 +115,11 @@ export default function Home() {
             <span className="italic">
               {thinkingComplete ? "Abstract" : thinkingText}
               {thinkingText && !definitionText && !allComplete && (
-                <span className="animate-pulse">|</span>
+                <span className="animate-pulse not-italic">|</span>
               )}
             </span>
           </p>
-          <p className="mb-8 min-h-[2em]">
+          <p className="mb-4 min-h-[2em]">
             {definitionText}
             {thinkingComplete &&
               definitionText.length < definition.length &&
@@ -129,7 +129,9 @@ export default function Home() {
             {exampleText}
             {definitionComplete &&
               exampleText.length < example.length &&
-              !allComplete && <span className="animate-pulse">|</span>}
+              !allComplete && (
+                <span className="animate-pulse not-italic">|</span>
+              )}
           </p>
         </div>
       </div>
