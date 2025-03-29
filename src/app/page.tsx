@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const thinkingWords = ["noun", "verb", "adjective", "concept", "Abstract"];
@@ -15,6 +16,7 @@ export default function Home() {
   const [exampleText, setExampleText] = useState("");
   const [definitionComplete, setDefinitionComplete] = useState(false);
   const [allComplete, setAllComplete] = useState(false);
+  const [buttonsVisible, setButtonsVisible] = useState(false);
 
   // Thinking animation with typing and backspacing
   useEffect(() => {
@@ -98,6 +100,17 @@ export default function Home() {
     }
   }, [definitionComplete, exampleText, allComplete]);
 
+  // Fade in buttons after typing is complete
+  useEffect(() => {
+    if (allComplete) {
+      // Add a small delay before showing buttons for a nicer effect
+      const timer = setTimeout(() => {
+        setButtonsVisible(true);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [allComplete]);
+
   return (
     <div className="w-screen h-screen bg-white flex flex-col items-center justify-center px-4">
       <div className="max-w-3xl w-full">
@@ -134,6 +147,16 @@ export default function Home() {
               )}
           </p>
         </div>
+      </div>
+
+      {/* Buttons with fade-in effect */}
+      <div
+        className={`flex justify-center gap-4 mt-6 transition-opacity duration-1000 ease-in-out ${
+          buttonsVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <Button variant="secondary">Register</Button>
+        <Button variant="secondary">Login</Button>
       </div>
     </div>
   );
