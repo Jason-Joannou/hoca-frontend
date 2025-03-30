@@ -111,6 +111,14 @@ export default function Home() {
     }
   }, [allComplete]);
 
+  const handleRegistrationClick = () => {
+    window.alert("Register");
+  };
+
+  const handleLoginClick = () => {
+    window.alert("Login");
+  };
+
   return (
     <div className="w-screen h-screen bg-white flex flex-col items-center justify-center px-4">
       <div className="max-w-3xl w-full">
@@ -159,6 +167,7 @@ export default function Home() {
           variant="link"
           size="lg"
           className="text-gray-700 hover:text-gray-900 hover:underline transition-colors px-0"
+          onClick={handleRegistrationClick}
         >
           Register
         </Button>
@@ -166,6 +175,7 @@ export default function Home() {
           variant="link"
           size="lg"
           className="text-gray-700 hover:text-gray-900 hover:underline transition-colors px-0"
+          onClick={handleLoginClick}
         >
           Login
         </Button>
