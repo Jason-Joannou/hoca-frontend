@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const thinkingWords = ["noun", "verb", "adjective", "concept", "Abstract"];
@@ -18,6 +19,7 @@ export default function Home() {
   const [allComplete, setAllComplete] = useState(false);
   const [buttonsVisible, setButtonsVisible] = useState(false);
 
+  const router = useRouter();
   // Thinking animation with typing and backspacing
   useEffect(() => {
     if (thinkingComplete) return;
@@ -116,7 +118,7 @@ export default function Home() {
   };
 
   const handleLoginClick = () => {
-    window.alert("Login");
+    router.push("/login");
   };
 
   return (
