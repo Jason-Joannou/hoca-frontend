@@ -114,7 +114,7 @@ export default function Home() {
   }, [allComplete]);
 
   const handleRegistrationClick = () => {
-    window.alert("Register");
+    router.push("/register");
   };
 
   const handleLoginClick = () => {
