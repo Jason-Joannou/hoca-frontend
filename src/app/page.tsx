@@ -151,12 +151,24 @@ export default function Home() {
 
       {/* Buttons with fade-in effect */}
       <div
-        className={`flex justify-center gap-4 mt-6 transition-opacity duration-1000 ease-in-out ${
+        className={`flex justify-center gap-6 mt-6 transition-opacity duration-1000 ease-in-out ${
           buttonsVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <Button variant="secondary">Register</Button>
-        <Button variant="secondary">Login</Button>
+        <Button
+          variant="link"
+          size="lg"
+          className="text-gray-700 hover:text-gray-900 hover:underline transition-colors px-0"
+        >
+          Register
+        </Button>
+        <Button
+          variant="link"
+          size="lg"
+          className="text-gray-700 hover:text-gray-900 hover:underline transition-colors px-0"
+        >
+          Login
+        </Button>
       </div>
     </div>
   );
