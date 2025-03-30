@@ -1,6 +1,6 @@
 import React from "react";
-import { LoginForm } from "@/components/login-form";
 import Link from "next/link";
+import { RegistrationForm } from "@/components/registration-form";
 
 const page = () => {
   return (
@@ -73,11 +73,11 @@ const page = () => {
 
           {/* Registration form - right side */}
           <div className="md:w-1/2 bg-gray-50 p-8 rounded-lg border border-gray-100">
-            <h2 className="text-2xl font-normal text-gray-800 mb-6 text-center">
+            <h2 className="text-2xl font-normal text-gray-800 mb-2 text-center">
               Register
             </h2>
             <div className="w-full max-w-sm mx-auto">
-              <LoginForm />
+              <RegistrationForm />
             </div>
           </div>
         </div>
