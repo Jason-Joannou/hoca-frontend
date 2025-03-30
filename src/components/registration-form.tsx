@@ -151,10 +151,6 @@ export function RegistrationForm({
                   value={formData.password}
                   onChange={handleChange}
                 />
-                <p className="text-xs text-gray-500">
-                  Must be at least 8 characters with a number and special
-                  character
-                </p>
               </div>
 
               <div className="grid gap-2">
