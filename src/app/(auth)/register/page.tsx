@@ -22,7 +22,7 @@ const page = () => {
             HOCA
           </h1>
           <p className="text-xl text-gray-600">
-            /hoʊkə/ - A belonging to a greater collective
+            A belonging to a greater collective
           </p>
         </header>
 
