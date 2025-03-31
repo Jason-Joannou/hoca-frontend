@@ -34,7 +34,44 @@ const data = {
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
-  navMain: [
+  navCommunity: [
+    {
+      title: "Religion",
+      url: "#",
+      icon: SquareTerminal,
+      isActive: true,
+      items: [
+        {
+          title: "Articles",
+          url: "#",
+        },
+        {
+          title: "Calendar",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Outreach",
+      url: "#",
+      icon: Bot,
+      items: [
+        {
+          title: "Upcoming Events",
+          url: "#",
+        },
+        {
+          title: "Previous Events",
+          url: "#",
+        },
+        {
+          title: "Join a programme",
+          url: "#",
+        },
+      ],
+    },
+  ],
+  navSocial: [
     {
       title: "Events",
       url: "#",
@@ -148,8 +185,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        <NavMain items={data.navSocial} title={"Social"} />
+        <NavMain items={data.navCommunity} title={"Community"} />
+        {/*<NavProjects projects={data.projects} /> */}
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
