@@ -56,66 +56,39 @@ const data = {
       ],
     },
     {
-      title: "Models",
+      title: "Workshops",
       url: "#",
       icon: Bot,
       items: [
         {
-          title: "Genesis",
+          title: "Host a workshop",
           url: "#",
         },
         {
-          title: "Explorer",
+          title: "Join a workshop",
           url: "#",
         },
         {
-          title: "Quantum",
+          title: "Edit a workshop",
           url: "#",
         },
       ],
     },
     {
-      title: "Documentation",
+      title: "Talks",
       url: "#",
       icon: BookOpen,
       items: [
         {
-          title: "Introduction",
+          title: "Upcoming talks",
           url: "#",
         },
         {
-          title: "Get Started",
+          title: "Previous talks",
           url: "#",
         },
         {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
+          title: "Join a talk",
           url: "#",
         },
       ],
@@ -164,8 +137,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <Command className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">Acme Inc</span>
-                  <span className="truncate text-xs">Enterprise</span>
+                  <span className="truncate font-medium">HOCA</span>
+                  <span className="truncate text-xs">
+                    The Greater Collective
+                  </span>
                 </div>
               </a>
             </SidebarMenuButton>
