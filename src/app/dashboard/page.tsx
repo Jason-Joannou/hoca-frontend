@@ -16,7 +16,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import MainEventPage from "@/components/dashboard/workshops/main-workshop";
+import MainWorkshopPage from "@/components/dashboard/workshops/main-workshop";
 
 export default function Page() {
   const [selectedPage, setSelectedPage] = useState("Home");
@@ -46,7 +46,7 @@ export default function Page() {
         </header>
         <div>
           {selectedPage === "Events" && <p>Events Content</p>}
-          {selectedPage === "Workshops" && <MainEventPage />}
+          {selectedPage === "Workshops" && <MainWorkshopPage />}
           {selectedPage === "Talks" && <p>Talks Content</p>}
           {selectedPage === "Home" && <p>Dashboard Home</p>}
         </div>
