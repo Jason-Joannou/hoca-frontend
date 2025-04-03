@@ -16,6 +16,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import MainEventPage from "@/components/dashboard/workshops/main-workshop";
 
 export default function Page() {
   const [selectedPage, setSelectedPage] = useState("Home");
@@ -43,13 +44,11 @@ export default function Page() {
             </Breadcrumb>
           </div>
         </header>
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div className="bg-muted/50 aspect-video rounded-xl" />
-            <div className="bg-muted/50 aspect-video rounded-xl" />
-            <div className="bg-muted/50 aspect-video rounded-xl" />
-          </div>
-          <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" />
+        <div>
+          {selectedPage === "Events" && <p>Events Content</p>}
+          {selectedPage === "Workshops" && <MainEventPage />}
+          {selectedPage === "Talks" && <p>Talks Content</p>}
+          {selectedPage === "Home" && <p>Dashboard Home</p>}
         </div>
       </SidebarInset>
     </SidebarProvider>
