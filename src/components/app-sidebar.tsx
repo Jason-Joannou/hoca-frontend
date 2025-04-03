@@ -162,7 +162,12 @@ const data = {
   ],
 };
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar({
+  setSelectedPage,
+  ...props
+}: React.ComponentProps<typeof Sidebar> & {
+  setSelectedPage: (title: string) => void;
+}) {
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>
@@ -185,8 +190,16 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navSocial} title={"Social"} />
-        <NavMain items={data.navCommunity} title={"Community"} />
+        <NavMain
+          items={data.navSocial}
+          title={"Social"}
+          setSelectedPage={setSelectedPage}
+        />
+        <NavMain
+          items={data.navCommunity}
+          title={"Community"}
+          setSelectedPage={setSelectedPage}
+        />
         {/*<NavProjects projects={data.projects} /> */}
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
