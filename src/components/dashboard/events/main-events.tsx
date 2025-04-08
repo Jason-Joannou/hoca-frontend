@@ -6,7 +6,7 @@ import {
   CardTitle,
   CardFooter,
 } from "@/components/ui/card";
-import { CalendarIcon, ClockIcon, MapPinIcon } from "lucide-react";
+import { CalendarIcon, ClockIcon, MapPinIcon, UsersIcon } from "lucide-react";
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 
@@ -80,9 +80,6 @@ const MainEventsPage = () => {
               {nextEvent.description}
             </p>
           </CardTitle>
-          <div className="absolute right-4 top-4 bg-muted/50 px-2 py-1 rounded-md text-xs">
-            {nextEvent.spotsLeft} spots left
-          </div>
         </CardHeader>
         <CardContent className="space-y-4 pt-0">
           <div className="flex items-center gap-2">
@@ -96,6 +93,13 @@ const MainEventsPage = () => {
             <ClockIcon className="h-4 w-4 text-muted-foreground" />
             <span className="text-sm">
               {nextEvent.startTime} - {nextEvent.endTime}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <UsersIcon className="h-4 w-4 text-muted-foreground" />
+            <span className="text-sm">
+              {nextEvent.attendees}/{nextEvent.totalSpots}
             </span>
           </div>
 
