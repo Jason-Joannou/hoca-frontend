@@ -39,7 +39,7 @@ const data = {
       title: "Religion",
       url: "#",
       icon: SquareTerminal,
-      isActive: true,
+      isActive: false,
       items: [
         {
           title: "Articles",
@@ -55,6 +55,7 @@ const data = {
       title: "Outreach",
       url: "#",
       icon: Bot,
+      isActive: false,
       items: [
         {
           title: "Upcoming Events",
@@ -96,6 +97,7 @@ const data = {
       title: "Workshops",
       url: "#",
       icon: Bot,
+      isActive: false,
       items: [
         {
           title: "Host a workshop",
@@ -115,6 +117,7 @@ const data = {
       title: "Talks",
       url: "#",
       icon: BookOpen,
+      isActive: false,
       items: [
         {
           title: "Upcoming talks",
