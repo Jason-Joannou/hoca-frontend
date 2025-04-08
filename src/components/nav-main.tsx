@@ -64,6 +64,7 @@ export function NavMain({
                         <SidebarMenuSubItem key={subItem.title}>
                           <SidebarMenuSubButton asChild>
                             <button
+                              disabled={!item.isActive}
                               onClick={() => setSelectedPage(subItem.title)}
                             >
                               <span>{subItem.title}</span>
