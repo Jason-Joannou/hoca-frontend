@@ -9,6 +9,7 @@ import {
 import { CalendarIcon, ClockIcon, MapPinIcon, UsersIcon } from "lucide-react";
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
+import EventCalendar from "@/components/calendar/event-calendar";
 
 const MainEventsPage = () => {
   // Updated events data with separate start and end times
@@ -218,6 +219,10 @@ const MainEventsPage = () => {
           </Button>
         </CardFooter>
       </Card>
+      {/* Calendar Section */}
+      <div className="px-4 lg:px-6">
+        <EventCalendar events={events} />
+      </div>
     </div>
   );
 };
