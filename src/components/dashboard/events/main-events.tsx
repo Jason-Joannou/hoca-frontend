@@ -51,22 +51,84 @@ const MainEventsPage = () => {
       attendees: 38,
       spotsLeft: 2,
     },
+    // Adding more events for demonstration
+    {
+      id: 4,
+      title: "Python Programming Workshop",
+      description: "Hands-on Python programming for beginners",
+      date: new Date("2025-05-05"),
+      startTime: "09:00",
+      endTime: "12:00",
+      location: "Computer Lab C",
+      totalSpots: 25,
+      attendees: 20,
+      spotsLeft: 5,
+    },
+    {
+      id: 5,
+      title: "Data Visualization Techniques",
+      description: "Learn effective data visualization methods",
+      date: new Date("2025-05-19"),
+      startTime: "14:00",
+      endTime: "17:00",
+      location: "Conference Room B",
+      totalSpots: 35,
+      attendees: 28,
+      spotsLeft: 7,
+    },
+    {
+      id: 6,
+      title: "Big Data Analytics",
+      description: "Processing and analyzing large datasets",
+      date: new Date("2025-05-26"),
+      startTime: "10:00",
+      endTime: "13:00",
+      location: "Auditorium A",
+      totalSpots: 45,
+      attendees: 40,
+      spotsLeft: 5,
+    },
+    // Adding even more events to ensure scrolling
+    {
+      id: 7,
+      title: "Cloud Computing Essentials",
+      description: "Introduction to cloud platforms and services",
+      date: new Date("2025-06-02"),
+      startTime: "13:00",
+      endTime: "16:00",
+      location: "Virtual Meeting Room",
+      totalSpots: 100,
+      attendees: 85,
+      spotsLeft: 15,
+    },
+    {
+      id: 8,
+      title: "Blockchain Technology",
+      description: "Understanding blockchain and its applications",
+      date: new Date("2025-06-09"),
+      startTime: "11:00",
+      endTime: "14:00",
+      location: "Conference Room C",
+      totalSpots: 40,
+      attendees: 36,
+      spotsLeft: 4,
+    },
   ];
 
   // Get the next upcoming event (first in the array since they're ordered by date)
   const nextEvent = events[0];
 
-  // Calculate events happening this month
-  const currentMonth = 3; // April (0-indexed)
-  const currentYear = 2025;
-  const eventsThisMonth = events.filter(
-    (event) =>
-      event.date.getMonth() === currentMonth &&
-      event.date.getFullYear() === currentYear,
-  ).length;
-
   // Check if there's space available
   const hasSpace = nextEvent.spotsLeft > 0;
+
+  // Get top events by attendance percentage
+  const topEventsByAttendance = [...events]
+    .map((event) => ({
+      ...event,
+      attendancePercentage: (event.attendees / event.totalSpots) * 100,
+    }))
+    .sort((a, b) => b.attendancePercentage - a.attendancePercentage)
+    .slice(0, 5); // Reduced to 5 events to fit smaller card
 
   return (
     <div className="grid grid-cols-2 gap-6 px-4 lg:px-6">
@@ -118,25 +180,43 @@ const MainEventsPage = () => {
           </Button>
         </CardFooter>
       </Card>
-
-      {/* Events This Month Card */}
-      <Card>
-        <CardHeader className="pb-2 flex flex-row items-start justify-between">
-          <div>
-            <CardDescription>Events This Month</CardDescription>
-            <CardTitle className="text-4xl font-bold">
-              {eventsThisMonth}
-            </CardTitle>
-          </div>
-          <Button variant="ghost" size="icon" className="rounded-full">
-            <CalendarIcon className="h-5 w-5" />
-          </Button>
+      {/* Popular Events Card - Simple List */}
+      <Card className="flex flex-col">
+        <CardHeader className="pb-2">
+          <CardDescription>Most Popular</CardDescription>
+          <CardTitle>Top Events by Attendance</CardTitle>
         </CardHeader>
-        <CardContent>
-          <p className="text-sm text-muted-foreground">
-            {eventsThisMonth} events scheduled for April 2025.
-          </p>
+        <CardContent className="flex-grow">
+          <div
+            style={{
+              height: "170px", // Reduced height to fit smaller card
+              overflowY: "auto",
+              paddingRight: "8px",
+            }}
+          >
+            {topEventsByAttendance.map((event, index) => (
+              <div key={event.id} className="mb-3 last:mb-0">
+                <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-2">
+                    <span className="font-medium">{index + 1}.</span>
+                    <span className="font-medium">{event.title}</span>
+                  </div>
+                  <span className="text-sm font-medium">
+                    {Math.round(event.attendancePercentage)}%
+                  </span>
+                </div>
+                <div className="ml-6 mt-1 text-xs text-muted-foreground">
+                  {format(event.date, "MMMM d, yyyy")}
+                </div>
+              </div>
+            ))}
+          </div>
         </CardContent>
+        <CardFooter className="mt-auto">
+          <Button variant="outline" className="w-full">
+            View All Events
+          </Button>
+        </CardFooter>
       </Card>
     </div>
   );
