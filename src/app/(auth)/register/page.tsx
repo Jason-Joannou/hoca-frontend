@@ -72,7 +72,7 @@ const page = () => {
           </div>
 
           {/* Registration form - right side */}
-          <div className="md:w-1/2 bg-gray-50 p-8 rounded-lg border border-gray-100">
+          <div className="md:w-1/2 p-6">
             <h2 className="text-3xl font-normal text-gray-800 mb-4 text-center">
               Register
             </h2>
